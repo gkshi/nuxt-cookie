@@ -10,25 +10,20 @@
 
 ```yarn add --dev nuxt-cookie```
 
-2. Create plugins/nuxt-cookie.js  
+2. Include plugin in nuxt config  
 
 ```javascript
-// @/plugins/nuxt-cookie.js
-import Vue from 'vue'
-import nuxtCookie from 'nuxt-cookie'
-
-Vue.use(nuxtCookie, {
-  prefix: 'name_prefix_' // optional
-})
-```
-
-3. Include plugin in nuxt.config.js
-
-```javascript
+// nuxt.config.js
 export default {
   plugins: [
-    '@/plugins/nuxt-cookie'
-  ]
+    'node_modules/nuxt-cookie'
+  ],
+
+  // optional config
+  nuxtCookie: {
+    prefix: 'projectname_',
+    defaultOptions: {} // such as path, expired, samesite etc
+  }
 }
 ```
 

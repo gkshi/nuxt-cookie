@@ -1,3 +1,5 @@
+import nuxtConfig from '@/nuxt.config'
+
 class NuxtCookie {
   constructor (options) {
     this.prefix = options.prefix || ''
@@ -56,10 +58,13 @@ class NuxtCookie {
     }
     this.set(name, '', opts)
   }
+
+  install (Vue) {
+    Vue.prototype.$cookie = this
+    // Vue.cookie = this
+  }
 }
 
-export default {
-  install (Vue, options) {
-    Vue.prototype.$cookie = new NuxtCookie(options)
-  }
+export default ({ app }, inject) => {
+  inject('cookie', new NuxtCookie(nuxtConfig.nuxtCookie || {}))
 }

@@ -1,6 +1,6 @@
 {
   "name": "nuxt-cookie",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nuxt.js plugin works with browser cookie",
   "author": "George Shinkarev <gkshi@ya.ru>",
   "files": [
